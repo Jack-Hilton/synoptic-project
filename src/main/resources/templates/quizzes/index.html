@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div>
+    <h1>Quiz Manager</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Quiz ID</th>
+            <th>Quiz Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="quiz : ${quizzes}">
+            <td th:text="${quiz.quizId}"></td>
+            <td th:text="${quiz.quizName}"></td>
+            <td><a th:href="@{/quiz/view/{id}(id=${quiz.quizId})}">View</a></td>
+            <td><a th:href="@{/quiz/{id}(id=${quiz.quizId})}">Edit</a></td>
+            <td><a th:href="@{/quiz/delete/{id}(id=${quiz.quizId})}">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <p><a th:href="@{/quiz}">New Quiz</a></p>
+</div>
+</html>
