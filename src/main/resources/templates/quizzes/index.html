@@ -17,8 +17,8 @@
         <tr th:each="quiz : ${quizzes}">
             <td th:text="${quiz.quizId}"></td>
             <td th:text="${quiz.quizName}"></td>
-            <td><a th:href="@{/quiz/view/{id}(id=${quiz.quizId})}">View</a></td>
-            <td><a th:href="@{/quiz/{id}(id=${quiz.quizId})}">Edit</a></td>
+            <td><a th:href="@{/quiz/questions/{id}(id=${quiz.quizId})}">View</a></td>
+            <td><a th:href="@{/quiz/edit/{id}(id=${quiz.quizId})}">Edit</a></td>
             <td><a th:href="@{/quiz/delete/{id}(id=${quiz.quizId})}">Delete</a></td>
         </tr>
         </tbody>
