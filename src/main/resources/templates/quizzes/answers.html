@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div>
+    <h1>Quiz Manager</h1>
+    <h3>Answers</h3>
+    <table>
+        <th:block th:each="answer : ${answers}">
+        <tbody>
+        <tr>
+            <td>A:</td>
+            <td th:text="${answer.answer1}"></td>
+        </tr>
+        <tr>
+            <td>B:</td>
+            <td th:text="${answer.answer2}"></td>
+        </tr>
+        <tr>
+            <td>C:</td>
+            <td th:text="${answer.answer3}"></td>
+        </tr>
+        <tr>
+            <td>D:</td>
+            <td th:text="${answer.answer4}"></td>
+        </tr>
+        <tr>
+            <td>E:</td>
+            <td th:text="${answer.answer5}"></td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+            <td><a th:href="@{/quiz/edit/{id}(id=${answer.quizId})}">Edit</a></td>
+        </tr>
+        </tbody>
+        </th:block>
+    </table>
+    <table>
+        <tr th:each="answer : ${answers}">
+            <td>Correct Answer:</td>
+            <td th:text="${answer.correctAnswer}"></td>
+        </tr>
+    </table>
+</div>
+</html>

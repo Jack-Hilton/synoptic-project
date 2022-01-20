@@ -17,4 +17,8 @@ public class QuestionService {
     public Iterable<Question> getAllQuestionsForQuiz(Integer quizId) {
         return questionRepository.findAllByQuizId(quizId);
     }
+
+    public Iterable<Question> getAllAnswersForQuestion(Integer questionId) {
+        return questionRepository.findAllByQuestionId(questionId);
+    }
 }

@@ -34,4 +34,10 @@ public class QuizController {
         Iterable<Question> questions = questionService.getAllQuestionsForQuiz(quizId);
         return new ModelAndView("quizzes/questions", "questions", questions);
     }
+
+    @GetMapping("/questions/answers/{questionId}")
+    public ModelAndView getAllAnswersForQuestion(@PathVariable Integer questionId) {
+        Iterable<Question> answers = questionService.getAllAnswersForQuestion(questionId);
+        return new ModelAndView("quizzes/answers", "answers", answers);
+    }
 }

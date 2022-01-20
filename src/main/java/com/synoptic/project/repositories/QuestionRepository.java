@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface QuestionRepository extends CrudRepository<Question, Integer> {
     Iterable<Question> findAllByQuizId(Integer quizId);
+    Iterable<Question> findAllByQuestionId(Integer questionId);
 }

@@ -17,7 +17,7 @@
         <tr th:each="question, iStat : ${questions}">
             <td th:text="${iStat.index + 1}"></td>
             <td th:text="${question.question}"></td>
-            <td><a th:href="@{/quiz/questions/{id}/answers(id=${question.quizId})}">View Answers</a></td>
+            <td><a th:href="@{/quiz/questions/answers/{id}(id=${question.questionId})}">View Answers</a></td>
             <td><a th:href="@{/quiz/edit/{id}(id=${question.quizId})}">Edit</a></td>
             <td><a th:href="@{/quiz/delete/{id}(id=${question.quizId})}">Delete</a></td>
         </tr>
