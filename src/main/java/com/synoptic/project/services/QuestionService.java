@@ -21,4 +21,8 @@ public class QuestionService {
     public Iterable<Question> getAllAnswersForQuestion(Integer questionId) {
         return questionRepository.findAllByQuestionId(questionId);
     }
+
+    public void deleteQuestionsById(Integer questionId) {
+        questionRepository.deleteById(questionId);
+    }
 }

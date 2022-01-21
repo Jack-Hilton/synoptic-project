@@ -6,10 +6,12 @@ import com.synoptic.project.services.QuestionService;
 import com.synoptic.project.services.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 @RequestMapping("/quiz")
@@ -39,5 +41,17 @@ public class QuizController {
     public ModelAndView getAllAnswersForQuestion(@PathVariable Integer questionId) {
         Iterable<Question> answers = questionService.getAllAnswersForQuestion(questionId);
         return new ModelAndView("quizzes/answers", "answers", answers);
+    }
+
+    @GetMapping("/delete/{quizId}")
+    public RedirectView deleteQuiz(@PathVariable Integer quizId) {
+        quizService.deleteQuizById(quizId);
+        return new RedirectView("/quiz/");
+    }
+
+    @GetMapping("/{quizId}/question/{questionId}")
+    public RedirectView deleteQuestion(@PathVariable Integer quizId, @PathVariable Integer questionId) {
+        questionService.deleteQuestionsById(questionId);
+        return new RedirectView("/quiz/questions/{quizId}");
     }
 }

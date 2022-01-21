@@ -19,10 +19,10 @@
             <td th:text="${question.question}"></td>
             <td><a th:href="@{/quiz/questions/answers/{id}(id=${question.questionId})}">View Answers</a></td>
             <td><a th:href="@{/quiz/edit/{id}(id=${question.quizId})}">Edit</a></td>
-            <td><a th:href="@{/quiz/delete/{id}(id=${question.quizId})}">Delete</a></td>
+            <td><a th:href="@{/quiz/{quizId}/question/{questionId}(questionId=${question.questionId},quizId=${question.quizId})}">Delete</a></td>
         </tr>
         </tbody>
     </table>
-    <p><a th:href="@{/quiz}">New Quiz</a></p>
+    <p><a th:href="@{/quiz}">New Question</a></p>
 </div>
 </html>
