@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div>
+    <h1>Quiz Manager</h1>
+    <form action="#" th:action="@{/addQuestion}" th:object="${question}" method="post">
+        <table border="1">
+            <tr>
+                <td><label th:text="#{question.question}"></label></td>
+                <td><input type="text" th:field="*{question}" placeholder="Question" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add Question"></td>
+            </tr>
+        </table>
+<!--        <input type="text" id="question" name="question" placeholder="Question" required><br>-->
+<!--        <input type="text" id="answer1" name="question" placeholder="Answer 1" required><br>-->
+<!--        <input type="text" id="answer2" name="question" placeholder="Answer 2" required><br>-->
+<!--        <input type="text" id="answer3" name="question" placeholder="Answer 3" required><br>-->
+<!--        <input type="text" id="answer4" name="question" placeholder="Answer 4"><br>-->
+<!--        <input type="text" id="answer5" name="question" placeholder="Answer 5"><br>-->
+<!--        <input type="text" id="correctAnswer" name="question" placeholder="Correct Answer" maxlength="1" required><br>-->
+<!--        <input type="submit" value="Submit">-->
+    </form>
+</div>
+</html>
