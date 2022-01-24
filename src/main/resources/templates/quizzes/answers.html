@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Quiz Manager</title>
 </head>
 <div>
     <h1>Quiz Manager</h1>
@@ -29,11 +29,6 @@
         <tr>
             <td>E:</td>
             <td th:text="${answer.answer5}"></td>
-        </tr>
-        <tr></tr>
-        <tr></tr>
-        <tr>
-            <td><a th:href="@{/quiz/edit/{id}(id=${answer.quizId})}">Edit</a></td>
         </tr>
         </tbody>
         </th:block>

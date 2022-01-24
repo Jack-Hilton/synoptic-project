@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Quiz Manager</title>
 </head>
 <div>
     <h1>Quiz Manager</h1>
@@ -18,7 +18,6 @@
             <td th:text="${iStat.index + 1}"></td>
             <td th:text="${question.question}"></td>
             <td><a th:href="@{/quiz/questions/answers/{id}(id=${question.questionId})}">View Answers</a></td>
-            <td><a th:href="@{/quiz/edit/{id}(id=${question.quizId})}">Edit</a></td>
             <td><a th:href="@{/quiz/{quizId}/question/{questionId}(questionId=${question.questionId},quizId=${question.quizId})}">Delete</a></td>
         </tr>
         </tbody>
