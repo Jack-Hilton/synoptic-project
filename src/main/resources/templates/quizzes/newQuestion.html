@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div>
+    <h1>Quiz Manager</h1>
+    <form action="#" th:action="@{/quiz/addQuestion}" th:object="${question}" method="post">
+        <p>Question: <input type="text" th:field="*{question}" /></p>
+        <p>Answer A: <input type="text" th:field="*{answer1}"></p>
+        <p>Answer B: <input type="text" th:field="*{answer2}"></p>
+        <p>Answer C: <input type="text" th:field="*{answer3}"></p>
+        <p>Answer D: <input type="text" th:field="*{answer4}"></p>
+        <p>Answer E: <input type="text" th:field="*{answer5}"></p>
+        <p>Correct Answer: <input type="text" th:field="*{correctAnswer}"></p>
+        <p><input type="submit"></p>
+    </form>
+</div>
+</html>

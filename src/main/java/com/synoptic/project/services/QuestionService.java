@@ -25,4 +25,8 @@ public class QuestionService {
     public void deleteQuestionsById(Integer questionId) {
         questionRepository.deleteById(questionId);
     }
+
+    public void addQuestion() {
+
+    }
 }
