@@ -59,19 +59,14 @@ public class QuizController {
         return new RedirectView("/quiz/questions/{quizId}");
     }
 
-    @RequestMapping("/question/new/")
-    @ResponseBody
-    public String addQuestion() {
-        return "addQuestion";
+    @GetMapping("/{quizId}/question/new/")
+    public ModelAndView newQuestion(@PathVariable Integer quizId) {
+        return new ModelAndView("quizzes/newQuestion", "question", new Question());
     }
 
-//    @GetMapping("/question/new/")
-//    public ModelAndView newQuestion(@PathVariable Integer quizId) {
-//        return new ModelAndView("quizzes/questions/new", "");
-//    }
-
     @RequestMapping(value = "/addQuestion", method = RequestMethod.POST)
-    public String addQuestion(@ModelAttribute Question question, BindingResult errors, Model model) {
-        return null;
+    public RedirectView addQuestion(@ModelAttribute Question question, BindingResult errors, Model model) {
+        model.addAttribute("question", question);
+        return new RedirectView("/quiz/");
     }
 }

@@ -23,6 +23,6 @@
         </tr>
         </tbody>
     </table>
-    <p><a th:href="@{/quiz/question/new}">New Question</a></p>
+    <p><a th:href="@{/quiz/{quizId}/question/new/(quizId=${questions[0].quizId})}">New Question</a></p>
 </div>
 </html>
